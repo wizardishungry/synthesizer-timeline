@@ -27,17 +27,15 @@ Colors =
 #BackgroundColors = canvas:Yellow
 BackgroundColors = canvas:lightGray
 #BackgroundColors = canvas:tan2
-Period = from:1950 till:2016
+Period = from:1963 till:2016
 
 Define $end = 2016
 
-ScaleMajor = unit:year increment:10 start:1950
+ScaleMajor = unit:year increment:10 start:1963
 
 Legend = orientation:vertical left:100 top:160
 
 LineData =
-
-  at:1960 color:darkGray layer:back
 
   at:1970 color:darkGray layer:back
 
@@ -51,9 +49,11 @@ LineData =
 
 BarData=
 
-  Barset:Moog
   barset:Buchla
-  barset:Manufacturers
+  Barset:Moog
+  barset:Serge
+  barset:Misc
+  barset:Euro
 
 
 PlotArea = right:100
@@ -64,30 +64,49 @@ PlotData=
 
   width:18 fontsize:10 textcolor:black align:left shift:(4,-6) mark:(line,white)
 
-  barset:Moog
-
-  from:1953 till:2002 color:Mu text:Moog
-  from:1977 till:2002 color:Other text:Big Briar
-  barset:break
-  from:2002 till:2015 color:Mu text:Moog Music
-  barset:break
-  from:2015 till:$end color:Euro text:Moog Music
-
   barset:Buchla
 
   from:1963 till:2012 color:Buchla text:Buchla
   barset:break
   from:2012 till:$end color:Buchla text:BEMI
 
-  barset:Manufacturers
+  barset:Moog
+
+  from:1965 till:1972 color:Mu text:R.A. Moog Co.
+  barset:break
+  from:1972 till:2002 color:Mu text:Moog Music
+  from:1977 till:2002 color:Other text:Big Briar
+  barset:break
+  barset:skip
+  from:2002 till:2015 color:Mu text:Moog Music
+  barset:break
+  barset:skip
+  from:2015 till:$end color:Euro text:Moog Music
+
+  barset:Serge
+
+  from:1973 till:1993 color:Serge text:Serge
+  barset:break
+  from:1993 till:$end color:Serge text:STS
+
+  barset:Misc
+  from:1972 till:$end color:Other text:E-mu # Euro in 2010s
+  from:1972 till:$end color:Frac text:PAiA # Frac probably later
+  from:1975 till:$end color:Other text:Polyfusion
+  from:1976 till:$end color:Other text:Roland # Euro in 2010s
+  from:1978 till:$end color:Frac text:Blacet Research
+  from:1996 till:$end color:MU text:Synthesizers.com
+  from:1999 till:$end color:Other text:Wiard
+
+  barset:Euro
 
   from:1995 till:$end color:Euro text:Doepfer
   from:1998 till:$end color:Euro text:Analogue Systems
   from:2004 till:$end color:Euro text:Vox Glitch
-  from:2005 till:$end color:Euro text:Plan B
+  from:2005 till:$end color:Euro text:Plan B # succeeded by EAR? FIXME
   from:2005 till:$end color:Euro text:Livewire
   from:2006 till:$end color:Euro text:Cwejman
-  from:2006 till:$end color:Euro text:The Harvestman
+  from:2006 till:$end color:Euro text:The Harvestman # succeeded by Industrial Music Electronics
   from:2008 till:$end color:Euro text:Make Noise
   from:2008 till:$end color:Euro text:Tip Top Audio
   from:2008 till:$end color:Euro text:Topobrillo
@@ -95,7 +114,7 @@ PlotData=
   from:2009 till:$end color:Euro text:Metasonix
   from:2009 till:$end color:Euro text:WMD
   from:2009 till:$end color:Euro text:Hinton Instruments
-  from:2009 till:$end color:Euro text:Synthesis Technology
+  from:2009 till:$end color:Euro text:Synthesis Technology  # started in 1997; 2011 is euro
   from:2010 till:$end color:Euro text:Synthwerks
   from:2010 till:$end color:Euro text:Intellijel
   from:2010 till:$end color:Euro text:Lzx Industries
@@ -111,7 +130,7 @@ PlotData=
   from:2011 till:$end color:Euro text:Trogotornic
   from:2011 till:$end color:Euro text:Hex Inverter
   from:2011 till:$end color:Euro text:SnazzyFX
-  from:2011 till:$end color:Euro text:ModCan
+  from:2011 till:$end color:Euro text:ModCan # started in 1997; 2011 is euro. Defunct?
   from:2012 till:$end color:Euro text:Synthetic Sound Labs
   from:2012 till:$end color:Euro text:Cesyg
   from:2012 till:$end color:Euro text:Rebel Technology
