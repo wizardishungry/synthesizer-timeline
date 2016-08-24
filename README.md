@@ -1,6 +1,8 @@
-Timeline of Synth History
+Timeline of Modular Synthesizer History
 ==
 
-Setup
+![Timeline](http://i64.tinypic.com/11azf2u.png)
+
+Setup etc.
 =====
 http://infodisiac.com/Wikipedia/EasyTimeline/Introduction.htm
