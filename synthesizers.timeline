@@ -1,0 +1,110 @@
+Preset = TimeHorizontal_AutoPlaceBars_UnitYear
+
+ImageSize = width:1100  height:auto barincrement:30
+
+Colors =
+
+  id:lightGray     value:gray(0.7)
+
+  id:gray          value:gray(0.4)
+
+  id:darkGray      value:gray(0.2)
+
+  id:euro     value:rgb(0.88,1,1)      legend:Eurorack
+
+  id:frac     value:rgb(0.75,1,0.75)   legend:Frac
+
+  id:buchla   value:rgb(1,1,0.75)      legend:Buchla
+
+  id:mu       value:rgb(1,0.75,0.75)   legend:MU
+
+  id:motm     value:rgb(1,0.75,0)      legend:MOTM
+
+  id:serge    value:rgb(1,0.5,0.75)    legend:Serge
+
+  id:other    value:Yellow             legend:Other
+
+#BackgroundColors = canvas:Yellow
+BackgroundColors = canvas:lightGray
+#BackgroundColors = canvas:tan2
+Period = from:1950 till:2016
+
+Define $end = 2016
+
+ScaleMajor = unit:year increment:10 start:1950
+
+Legend = orientation:vertical left:100 top:160
+
+LineData =
+
+  at:1960 color:darkGray layer:back
+
+  at:1970 color:darkGray layer:back
+
+  at:1980 color:darkGray layer:back
+
+  at:1990 color:darkGray layer:back
+
+  at:2000 color:darkGray layer:back
+
+  at:2010 color:darkGray layer:back
+
+BarData=
+
+  barset:Manufacturers
+
+PlotData=
+
+# set defaults
+
+  width:18 fontsize:10 textcolor:black align:left anchor:from shift:(4,-6)
+
+  barset:Manufacturers
+
+  from:1953 till:2002 color:Mu text:Moog
+  from:1977 till:2002 color:Other text:Big Briar
+  from:2002 till:2015 color:Mu text:Moog Music
+  from:2015 till:$end color:Euro text:Moog Music
+
+  from:1963 till:2012 color:Buchla text:Buchla
+  from:2012 till:$end color:Buchla text:BEMI
+
+  from:1995 till:$end color:Euro text:Doepfer
+  from:1998 till:$end color:Euro text:Analogue Systems
+  from:2004 till:$end color:Euro text:Vox Glitch
+  from:2005 till:$end color:Euro text:Plan B
+  from:2005 till:$end color:Euro text:Livewire
+  from:2006 till:$end color:Euro text:Cwejman
+  from:2006 till:$end color:Euro text:The Harvestman
+  from:2008 till:$end color:Euro text:Make Noise
+  from:2008 till:$end color:Euro text:Tip Top Audio
+  from:2008 till:$end color:Euro text:Topobrillo
+  from:2009 till:$end color:Euro text:Bubblesound
+  from:2009 till:$end color:Euro text:Metasonix
+  from:2009 till:$end color:Euro text:WMD
+  from:2009 till:$end color:Euro text:Hinton Instruments
+  from:2009 till:$end color:Euro text:Synthesis Technology
+  from:2010 till:$end color:Euro text:Synthwerks
+  from:2010 till:$end color:Euro text:Intellijel
+  from:2010 till:$end color:Euro text:Lzx Industries
+  from:2010 till:$end color:Euro text:Fonitronik
+  from:2010 till:$end color:Euro text:Kilpatrick Audio
+  from:2010 till:$end color:Euro text:Pittsburgh Modular
+  from:2010 till:$end color:Euro text:Circuit Abbey
+  from:2011 till:$end color:Euro text:Cyclonix
+  from:2011 till:$end color:Euro text:Dave Jones Design
+  from:2011 till:$end color:Euro text:DinSync.info
+  from:2011 till:$end color:Euro text:Synovatron
+  from:2011 till:$end color:Euro text:Manhattan Analog
+  from:2011 till:$end color:Euro text:Trogotornic
+  from:2011 till:$end color:Euro text:Hex Inverter
+  from:2011 till:$end color:Euro text:SnazzyFX
+  from:2011 till:$end color:Euro text:ModCan
+  from:2012 till:$end color:Euro text:Synthetic Sound Labs
+  from:2012 till:$end color:Euro text:Cesyg
+  from:2012 till:$end color:Euro text:Rebel Technology
+  from:2012 till:$end color:Euro text:Schippmann
+  from:2012 till:$end color:Euro text:Psycho Labs
+  from:2012 till:$end color:Euro text:Steady State Fate
+  from:2012 till:$end color:Euro text:XAOC Device
+  from:2012 till:$end color:Euro text:Frequency Central
