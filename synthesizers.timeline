@@ -31,7 +31,7 @@ Period = from:1963 till:2016
 
 Define $end = 2016
 
-ScaleMajor = unit:year increment:10 start:1963
+ScaleMajor = unit:year increment:10 start:1970
 
 Legend = orientation:vertical left:100 top:160
 
