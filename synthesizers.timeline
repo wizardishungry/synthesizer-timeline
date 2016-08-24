@@ -51,23 +51,35 @@ LineData =
 
 BarData=
 
+  Barset:Moog
+  barset:Buchla
   barset:Manufacturers
+
+
+PlotArea = right:100
 
 PlotData=
 
 # set defaults
 
-  width:18 fontsize:10 textcolor:black align:left anchor:from shift:(4,-6)
+  width:18 fontsize:10 textcolor:black align:left shift:(4,-6) mark:(line,white)
 
-  barset:Manufacturers
+  barset:Moog
 
   from:1953 till:2002 color:Mu text:Moog
   from:1977 till:2002 color:Other text:Big Briar
+  barset:break
   from:2002 till:2015 color:Mu text:Moog Music
+  barset:break
   from:2015 till:$end color:Euro text:Moog Music
 
+  barset:Buchla
+
   from:1963 till:2012 color:Buchla text:Buchla
+  barset:break
   from:2012 till:$end color:Buchla text:BEMI
+
+  barset:Manufacturers
 
   from:1995 till:$end color:Euro text:Doepfer
   from:1998 till:$end color:Euro text:Analogue Systems
