@@ -1,87 +1,149 @@
 Preset = TimeHorizontal_AutoPlaceBars_UnitYear
 
+Define $end = 2017
+Define $normal = width:20
+Define $narrow = width:10
+
+
 ImageSize = width:1100  height:auto barincrement:30
 
 Colors =
 
   id:lightGray     value:gray(0.7)
-
   id:gray          value:gray(0.4)
-
   id:darkGray      value:gray(0.2)
-
   id:euro     value:rgb(0.88,1,1)      legend:Eurorack
-
   id:frac     value:rgb(0.75,1,0.75)   legend:Frac
-
   id:buchla   value:rgb(1,1,0.75)      legend:Buchla
-
   id:mu       value:rgb(1,0.75,0.75)   legend:MU
-
   id:motm     value:rgb(1,0.75,0)      legend:MOTM
-
   id:serge    value:rgb(1,0.5,0.75)    legend:Serge
-
   id:other    value:Yellow             legend:Other
+  id:none     value:gray(0.9)          legend:None!
 
-#BackgroundColors = canvas:Yellow
 BackgroundColors = canvas:lightGray
-#BackgroundColors = canvas:tan2
-Period = from:1963 till:2016
+Period = from:1953 till:$end
+ 
+ScaleMajor = unit:year increment:5 start:1960
 
-Define $end = 2016
-
-ScaleMajor = unit:year increment:10 start:1970
-
-Legend = orientation:vertical left:100 top:160
+Legend = orientation:vertical left:70 top:300
 
 LineData =
 
+  at:1960 color:darkGray layer:back
   at:1970 color:darkGray layer:back
-
   at:1980 color:darkGray layer:back
-
   at:1990 color:darkGray layer:back
-
   at:2000 color:darkGray layer:back
-
   at:2010 color:darkGray layer:back
 
 BarData=
 
   barset:Buchla
-  Barset:Moog
+  barset:Moog
+  bar:EML
+  bar:Arp
+  bar:EMS
+  bar:Oberheim
+  bar:Emu
+  bar:Hinton
+  bar:PAiA
+  bar:Roland
   barset:Serge
   barset:Misc
+  bar:Modcan
+  bar:SynthTech
+  bar:Wiard
+  bar:Doepfer
   barset:Euro
 
 
-PlotArea = right:100
+
+PlotArea = right:80
 
 PlotData=
 
 # set defaults
 
-  width:18 fontsize:10 textcolor:black align:left shift:(4,-6) mark:(line,white)
+  fontsize:10 textcolor:black align:left shift:(4,-6) mark:(line,white)
+  $normal
+
+  bar:EML from:1968 till:1971 color:None text:Electronic Music Laboratories
+  bar:EML from:1971 till:1984 color:Other
+
+  bar:Arp from:1969 till:1972 color:None text:Arp
+  bar:Arp from:1972 till:1981 color:Other
+
+  bar:EMS from:1969 till:1980 color:Other text:EMS # date of end?
+
+  bar:Oberheim from:1969 till:1974 color:None text:Oberheim
+  bar:Oberheim from:1974 till:1979 color:Other
+  bar:Oberheim from:1979 till:2000 color:None
+  bar:Oberheim from:2009 till:2015 color:Other text:TomOberheim.com
+  bar:Oberheim from:2015 till:$end color:Euro
+
+
+  bar:Emu from:1971 till:1972 color:None text:E-mu
+  bar:Emu from:1972 till:1993 color:Other
+  bar:Emu from:2016 till:$end color:Euro text:Rossum~Electro-Music
+
+  bar:PAiA from:1972 till:$end color:Other text:PAiA
+  bar:PAiA from:2000 till:$end color:Frac text:Date?
+
+  bar:Hinton from:1971 till:$end color:Other text:Graham Hinton
+  bar:Hinton from:1981 till:$end color:Other text:Hinton Instruments
+  bar:Hinton from:2009 till:$end color:Euro
+
+  bar:Roland from:1972 till:1976 color:none text:Roland
+  bar:Roland from:1976 till:$end color:Other
+  bar:Roland from:1984 till:2015 color:none
+  bar:Roland from:2015 till:$end color:Euro
+
+  bar:Modcan from:1997 till:$end color:Other text:ModCan
+  bar:Modcan from:2011 till:$end color:Euro
+
+  bar:SynthTech from:1997 till:2010 color:Motm text:MOTM 
+  $narrow
+  bar:SynthTech from:2006 till:2010 color:Frac text:Synthesis Technology
+  $normal
+  bar:SynthTech from:2010 till:$end color:Euro
+
+  bar:Wiard from:1999 till:$end color:Other text:Wiard
+  $narrow
+  bar:Wiard from:1999 till:2009 color:Frac text:Wiard # End date?
+  $normal
+
+  bar:Doepfer from:1977 till:$end color:Other text:Doepfer
+  bar:Doepfer from:1995 till:$end color:Euro
 
   barset:Buchla
 
-  from:1963 till:2012 color:Buchla text:Buchla
+  from:1962 till:1963 color:None text:Buchla and Associates
+  barset:break
+  from:1963 till:1990 color:Buchla
+  barset:break
+  from:1990 till:2004 color:None text:(Date?)
+  barset:break
+  from:2004 till:2012 color:Buchla
   barset:break
   from:2012 till:$end color:Buchla text:BEMI
 
   barset:Moog
 
-  from:1965 till:1972 color:Mu text:R.A. Moog Co.
+  from:1953 till:1965 color:None text:R.A. Moog Co.
+  barset:break
+  from:1965 till:1972 color:Mu
   barset:break
   from:1972 till:2002 color:Mu text:Moog Music
   from:1977 till:2002 color:Other text:Big Briar
   barset:break
   barset:skip
-  from:2002 till:2015 color:Mu text:Moog Music
+  from:2002 till:$end color:Mu text:Moog Music
   barset:break
   barset:skip
-  from:2015 till:$end color:Euro text:Moog Music
+  $narrow
+  from:2015 till:$end color:Euro
+  $normal
 
   barset:Serge
 
@@ -90,31 +152,30 @@ PlotData=
   from:1993 till:$end color:Serge text:STS
 
   barset:Misc
-  from:1972 till:$end color:Other text:E-mu # Euro in 2010s
-  from:1972 till:$end color:Frac text:PAiA # Frac probably later
-  from:1975 till:$end color:Other text:Polyfusion
-  from:1976 till:$end color:Other text:Roland # Euro in 2010s
+  from:1975 till:1980 color:Other text:Polyfusion
   from:1978 till:$end color:Frac text:Blacet Research
   from:1996 till:$end color:MU text:Synthesizers.com
-  from:1999 till:$end color:Other text:Wiard
+  from:1999 till:$end color:MU text:Oakley Sound Systems
+  from:2003 till:$end color:MU text:Club of the Knobs
+  from:2008 till:$end color:MU text:Moon Modular
+  from:2007 till:$end color:Other text:Mattson Mini Modular
+  from:2008 till:$end color:MU text:Mos-Lab
+  from:2008 till:$end color:Buchla text:Eardrill
 
   barset:Euro
 
-  from:1995 till:$end color:Euro text:Doepfer
   from:1998 till:$end color:Euro text:Analogue Systems
   from:2004 till:$end color:Euro text:Vox Glitch
-  from:2005 till:$end color:Euro text:Plan B # succeeded by EAR? FIXME
+  from:2005 till:2009 color:Euro text:Plan B # succeeded by EAR 2015
   from:2005 till:$end color:Euro text:Livewire
   from:2006 till:$end color:Euro text:Cwejman
-  from:2006 till:$end color:Euro text:The Harvestman # succeeded by Industrial Music Electronics
+  from:2006 till:2015 color:Euro text:The Harvestman # succeeded by Industrial Music Electronics in 2015
   from:2008 till:$end color:Euro text:Make Noise
   from:2008 till:$end color:Euro text:Tip Top Audio
   from:2008 till:$end color:Euro text:Topobrillo
   from:2009 till:$end color:Euro text:Bubblesound
   from:2009 till:$end color:Euro text:Metasonix
   from:2009 till:$end color:Euro text:WMD
-  from:2009 till:$end color:Euro text:Hinton Instruments
-  from:2009 till:$end color:Euro text:Synthesis Technology  # started in 1997; 2011 is euro
   from:2010 till:$end color:Euro text:Synthwerks
   from:2010 till:$end color:Euro text:Intellijel
   from:2010 till:$end color:Euro text:Lzx Industries
@@ -122,7 +183,7 @@ PlotData=
   from:2010 till:$end color:Euro text:Kilpatrick Audio
   from:2010 till:$end color:Euro text:Pittsburgh Modular
   from:2010 till:$end color:Euro text:Circuit Abbey
-  from:2011 till:$end color:Euro text:Cyclonix
+  from:2011 till:$end color:Euro text:Cylonix
   from:2011 till:$end color:Euro text:Dave Jones Design
   from:2011 till:$end color:Euro text:DinSync.info
   from:2011 till:$end color:Euro text:Synovatron
@@ -130,7 +191,6 @@ PlotData=
   from:2011 till:$end color:Euro text:Trogotornic
   from:2011 till:$end color:Euro text:Hex Inverter
   from:2011 till:$end color:Euro text:SnazzyFX
-  from:2011 till:$end color:Euro text:ModCan # started in 1997; 2011 is euro. Defunct?
   from:2012 till:$end color:Euro text:Synthetic Sound Labs
   from:2012 till:$end color:Euro text:Cesyg
   from:2012 till:$end color:Euro text:Rebel Technology
@@ -139,3 +199,10 @@ PlotData=
   from:2012 till:$end color:Euro text:Steady State Fate
   from:2012 till:$end color:Euro text:XAOC Device
   from:2012 till:$end color:Euro text:Frequency Central
+  barset:break
+  barset:skip
+  barset:skip
+  from:2015 till:$end color:Euro text:Electro-~Acoustic~Research # Plan B
+  barset:skip
+  barset:skip
+  from:2015 till:$end color:Euro text:Industrial~Music~Electronics # The Harvestman 
